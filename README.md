@@ -1,21 +1,16 @@
 # bsky-username
 
-reads a map from domain-to-DID stored in `db.json` and serves DIDs depending on the host in the HTTP request, allowing you to add custom handles for a domain easily.
+**NOTE:** this fork is specifically for the enby.club domain. if you want to do this with your own domain, probably use [upstream](https://gitub.com/tendstofortytwo/bsky-username) instead which doesn't have an existing db.json.
 
-## usage
+## add your username to enby.club
 
-1. start the server
+submit a PR to this repository, adding a line like this:
 
-	```
-	go run . -port=3000
-	```
-2. redirect requests (caddyfile example)
+```
+	"yourusername.enby.club": "did:plc:your-bluesky-did-from-the-custom-settings-page"
+```
 
-	```
-	*.enby.club {
-		reverse_proxy localhost:3000
-	}
-	```
+once the PR merges, you can add your handle in settings (using the "No DNS Panel" option).
 
 ## license
 
